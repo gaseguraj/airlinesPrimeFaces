@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<h:head>
+		<title>Airline Manager</title>
+	</h:head>
+	<h:body>
+	
+		<ui:insert name="header" >
+		  <ui:include src="/menu.xhtml" />
+		</ui:insert>
+		
+		<h:form>
+			<p:messages for="flight"/>
+		    <h:panelGrid columns="4" cellpadding="5">
+		        <h:outputLabel for="name" value="Name:" style="font-weight:bold" />
+		        <p:inputText id="name" value="#{airline.name}" required="true" />
+		        
+		        <p:selectOneMenu id="flight" value="#{airlineHelper.flight}" style="width:125px" required="true" binding="#{flight}">
+		        	<p:ajax event="change" update="@this" />
+		            <f:selectItem itemLabel="Select One" itemValue="" />
+            		<f:selectItems value="#{airlineHelper.flights}" />
+		        </p:selectOneMenu>
+		        
+		        <p:commandButton value="submit" action="#{airlineHelper.createAirline(airline)}" immediate="true" icon="ui-icon-check" />
+		        
+		    </h:panelGrid>
+		</h:form>
+	</h:body>
+</html>

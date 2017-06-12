@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14972334243070" configfile="/airlinesGUIWeb/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="createAirline.xhtml" id="pf14972334665254" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14972334665265" path="/createAirline.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="flights" id="pf14972334665266" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14972334665265" path="/flights"/>
+  <links id="pf14972334665265" target="pf14972334665266" source="pf14972334665254" outcome="created"/>
+</pageflow:Pageflow>

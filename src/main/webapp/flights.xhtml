@@ -4,12 +4,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
 	<title>Action Index</title>
 </h:head>
 <h:body>
+		<ui:insert name="header" >
+		  <ui:include src="/menu.xhtml" />
+		</ui:insert>
 	<h:form>
 		<p:dataTable var="flight" value="#{flightView.flights}" widgetVar="flightsTable"
 			emptyMessage="No fligths found with given criteria" filteredValue="#{flightView.filteredFlights}">

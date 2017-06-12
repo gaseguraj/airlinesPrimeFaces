@@ -163,5 +163,10 @@ public class Flight {
 	public void setAirplane(Airplane airplane) {
 		this.airplane = airplane;
 	}
+	
+	@Override
+	public String toString(){
+		return this.getFlightnr();
+	}
 
 }
