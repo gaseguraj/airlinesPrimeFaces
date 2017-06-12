@@ -48,6 +48,12 @@ public class AirlineView implements Serializable {
          System.out.println("onRowEdit: " + event.getObject());
          airlineService.update((Airline)event.getObject());
     }
+    
+   
+    public void onDelete(Airline airline) {
+         System.out.println("onRowDelete: " + airline);
+         airlineService.delete(airline);
+    }
      
     public void onRowCancel(RowEditEvent event) {
         FacesMessage msg = new FacesMessage("Edit Cancelled", ( event.getObject()).toString());

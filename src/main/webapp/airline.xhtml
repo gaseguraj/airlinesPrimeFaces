@@ -16,6 +16,7 @@
 		  <ui:include src="/menu.xhtml" />
 		</ui:insert>
 		<h:form id="form">
+		<p:growl id="msgs" showDetail="false"/>
 		   <p:dataTable id="airlines" var="air" value="#{airlineView.airlines}" editable="true" style="margin-bottom:20px">
 		       <f:facet name="header">
 		           Row Editing
@@ -40,6 +41,12 @@
 		 
 		       <p:column style="width:32px">
 		           <p:rowEditor />
+		       </p:column>
+		       
+		       <p:column style="width:25px">
+				        <p:commandButton icon="ui-icon-trash" title="Delete "
+                        actionListener="#{airlineView.onDelete(air)}" ajax="false" />
+
 		       </p:column>
 		   </p:dataTable>
 		</h:form>
